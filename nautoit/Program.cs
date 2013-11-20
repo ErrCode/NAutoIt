@@ -47,7 +47,7 @@ namespace ConsoleApplication1
             var rg = ComWithoutRegisteringExample.ComHelper.CreateInstance(module, clsid);
             rg.GetType().InvokeMember("Run", BindingFlags.Instance | BindingFlags.Public | BindingFlags.InvokeMethod, (Binder)null, rg, new object[] { "Notepad" });
             Console.WriteLine(rg);
-             var obj= NRegFreeCom.ActivationContext.CreateInstanceWithManifest(new Guid("{1A671297-FA74-4422-80FA-6C5D8CE4DE04}"), "i:\\src\\pyautoit\\AutoItX3.dll.manifest");
+            // var obj= NRegFreeCom.ActivationContext.CreateInstanceWithManifest(new Guid("{1A671297-FA74-4422-80FA-6C5D8CE4DE04}"), "i:\\src\\pyautoit\\AutoItX3.dll.manifest");
             //var qwe = obj as IAutoItX3;
             //object obj = null;
             

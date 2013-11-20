@@ -1,24 +1,28 @@
-IronAutoItX
+pyautoit
 ===========
 
-Simply calling AutoItX without COM registrations 
+Simply calling AutoItX from IronPython
 
 
+```python
+from pyautoit import AutoIt
 
-You have to create right manifest. I have created C# lib which was useful for me to instantiate Reg Free COM objects (available via NuGet install NRegFreeCom):
+auto = AutoIt()     
+ 
+auto.Run("notepad.exe")
+auto.WinWaitActive("Untitled - Notepad")
+auto.Send("This is some text.")
+auto.WinClose("Untitled - Notepad")
+auto.WinWaitActive("Notepad", "Save")
+#auto.WinWaitActive("Notepad", "Do you want to save") # for windows xp
+auto.Send("!n")
+```python
 
-    [Test]
-    public void TestCreateNativeCOM()
-    {
-        var nativeImplementation = new Guid("538ECD5D-8A57-4F1C-AEB1-EBC425641F0B");
-        var obj = NRegFreeCom.ActivationContext.CreateInstanceWithManifest(nativeImplementation,
-                                                                           "Win32/RegFreeComNativeImplementer.dll.manifest");
-        var obj2 = obj as ILoadedByManagedImplementedByNative;
-        var str = obj2.Get();
-        Console.WriteLine(str);
-    }
-Next source contains samples of Reg Free COM objects and their creation: https://github.com/asd-and-Rizzo/NRegFreeCom
+```python
+from pyautoit import AutoIt
 
-There is article about reg free ActiveX in C# from which I started: http://www.atalasoft.com/blogs/spikemclarty/february-2012/dynamically-testing-an-activex-control-from-c-and
+auto = AutoIt()
+# AutoItX does not provides this method, replaced via some python equivalent
+auto.MsgBox(64, "Tutorial", "Hello World!")
+```
 
-Sxstrace is utility can help to diagnose reg free COM problems.
