@@ -6,7 +6,7 @@
     <ProjectGuid>f4e66022-ab35-445b-a540-8937af98bf31</ProjectGuid>
     <ProjectHome>
     </ProjectHome>
-    <StartupFile>my_first_script.py</StartupFile>
+    <StartupFile>reg_free_autoitx.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -37,6 +37,10 @@
   <ItemGroup>
     <Compile Include="my_first_script.py" />
     <Compile Include="pyautoit\__init__.py" />
+    <Compile Include="reg_free_autoitx.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AutoItX3.dll.manifest" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" />
 </Project>

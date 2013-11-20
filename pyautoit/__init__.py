@@ -1,16 +1,34 @@
 import clr
 import System
-
+import sys
 
 
 class AutoIt(object):
   """ Creates and returns AutoItX Object """
-  def __init__(self):
-    clr.AddReference("NRegFreeCom.dll")
-    self.comType = System.Type.GetTypeFromProgID("AutoItX3.Control")
-    self.com = System.Activator.CreateInstance(self.comType) 
+  def __init__(self,autoItXManifest = None,dllLocation = None):
+    if autoItXManifest == None and dllLocation == None:      
+      comType = System.Type.GetTypeFromProgID("AutoItX3.Control")
+      self.com = System.Activator.CreateInstance(type = comType) 
+    else:
+      # load reg free com invocation facilities
+      sys.path.append(dllLocation)
+      clr.AddReferenceToFile("NRegFreeCom.dll")
+      import  NRegFreeCom.ActivationContext
+    
+      # creates AutoItX using manifest instead of registy
+      #next fails for some reason
+      self.com = NRegFreeCom.ActivationContext.CreateInstanceWithManifest(System.Guid.Parse("{1A671297-FA74-4422-80FA-6C5D8CE4DE04}"),autoItXManifest) 
+      
+      
+      #def OtherMethod():
+      #   clr.AddReference('System.Core')
+      #   clr.AddReferenceToFile("AutoItX3Lib.dll")
+      #   self.com = AutoItX3()
+      #NRegFreeCom.UsingManifestDo(autoItXManifest,NRegFreeCom.ActivationContext.doSomething(OtherMethod) )
 
-  def __del__(self):
+
+
+  def del__(self):
       System.Runtime.InteropServices.Marshal.FinalReleaseComObject(self.com)
 
   def Run(self, program, workingdir = None, show_flag= None, opt_flag = None):

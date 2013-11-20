@@ -1,0 +1,1 @@
+C:\Windows\Microsoft.NET\Framework\v4.0.30319\regasm.exe /tlb:"AutoItX3.tlb" "AutoItX3.dll"
