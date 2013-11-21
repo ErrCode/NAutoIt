@@ -11,7 +11,8 @@
     <RootNamespace>nautoit</RootNamespace>
     <AssemblyName>nautoit</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
@@ -37,9 +38,10 @@
   <ItemGroup>
     <Reference Include="AutoItX3Lib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
       <HintPath>..\..\AutoItX3Lib.dll</HintPath>
     </Reference>
+    <Reference Include="CustomMarshalers" />
     <Reference Include="NRegFreeCom">
       <HintPath>..\..\NRegFreeCom.dll</HintPath>
     </Reference>
@@ -52,6 +54,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DispatchUtility.cs" />
+    <Compile Include="IDispatchInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
