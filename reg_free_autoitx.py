@@ -4,7 +4,7 @@ from pyautoit import AutoIt
 # needs manifest and AutoItX dll located in the same folder
 # needs AutoItX has the same version as in manifest
 # python interpereter should of the same bitness as AutoItX (32 can use 32 bit, 64 can use 64 bit dll only)
-auto = AutoIt("i:\\src\\pyautoit\\AutoIt3Dependency.manifest","i:\\src\\pyautoit\\")    
+auto = AutoIt("I:\\src\\pyautoit\\AutoItX3Dependency.manifest")    
   
 auto.Run("notepad.exe")
 auto.WinWaitActive("Untitled - Notepad")
