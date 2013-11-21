@@ -6,7 +6,7 @@
     <ProjectGuid>f4e66022-ab35-445b-a540-8937af98bf31</ProjectGuid>
     <ProjectHome>
     </ProjectHome>
-    <StartupFile>simple_notepad_automation.py</StartupFile>
+    <StartupFile>reg_free_autoitx.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>

@@ -13,18 +13,20 @@ class AutoIt(object):
       # load reg free com invocation facilities
       sys.path.append(dllLocation)
       clr.AddReferenceToFile("NRegFreeCom.dll")
+      clr.AddReferenceToFile("AutoItX3Lib.dll")
       import  NRegFreeCom.ActivationContext
-    
+      import  AutoItX3Lib
+
       # creates AutoItX using manifest instead of registy
-      #next fails for some reason
-      self.com = NRegFreeCom.ActivationContext.CreateInstanceWithManifest(System.Guid("{1A671297-FA74-4422-80FA-6C5D8CE4DE04}"),autoItXManifest) 
+      self.com = NRegFreeCom.ActivationContext.CreateInstanceWithManifest(System.Guid("{1A671297-FA74-4422-80FA-6C5D8CE4DE04}"),"i:\\src\\pyautoit\\AutoItX3Dependency.manifest") 
       
+      #clsid = System.Guid("{1A671297-FA74-4422-80FA-6C5D8CE4DE04}")
+      #assemblies = NRegFreeCom.AssemblySystem()
+      #module = assemblies.LoadFrom("I:/src/pyautoit/AutoItX3.dll")
+      #obj = NRegFreeCom.ActivationContext.CreateInstanceDirectly(module, clsid)
+      #self.com  =  clr.Convert(obj, AutoItX3Lib.IAutoItX3)
       
-      #def OtherMethod():
-      #   clr.AddReference('System.Core')
-      #   clr.AddReferenceToFile("AutoItX3Lib.dll")
-      #   self.com = AutoItX3()
-      #NRegFreeCom.UsingManifestDo(autoItXManifest,NRegFreeCom.ActivationContext.doSomething(OtherMethod) )
+
 
 
 
