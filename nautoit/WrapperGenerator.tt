@@ -1,0 +1,4 @@
+﻿<#@ template language="C#" #>
+// This generator is used cause IronPython uses reflection(IDispatch) for invocation of COM interfaces even if object was type casted to interop interfaces
+// Which fails to work if using AutoItX COM without registration http://stackoverflow.com/questions/9209910/how-to-use-registration-free-com-dll-in-dot-net/9229764?noredirect=1#comment29983358_9229764
+// Generator creates reflectionable(late binding invocable) C# wrapper above unreflectionable COM object from declaration of COM interop
