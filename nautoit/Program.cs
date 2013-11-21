@@ -19,9 +19,9 @@ namespace nautoit
         static void Main(string[] args)
         {
 
-            var obj22 = NRegFreeCom.ActivationContext.CreateInstanceWithManifest(new Guid("{1A671297-FA74-4422-80FA-6C5D8CE4DE04}"), "i:\\src\\pyautoit\\AutoItX3Dependency.manifest");
-            var obbb = obj22 as IAutoItX3;
-            obbb.Run("Notepad");
+            var createdViaManifest = NRegFreeCom.ActivationContext.CreateInstanceWithManifest(new Guid("{1A671297-FA74-4422-80FA-6C5D8CE4DE04}"), "AutoItX3Dependency.manifest");
+            var autoItWithManifest = (IAutoItX3)createdViaManifest;
+            autoItWithManifest.Run("Notepad");
 
             var clsid = new Guid("{1A671297-FA74-4422-80FA-6C5D8CE4DE04}");
             var assemblies = new NRegFreeCom.AssemblySystem();
