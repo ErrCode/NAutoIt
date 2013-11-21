@@ -6,7 +6,7 @@
     <ProjectGuid>f4e66022-ab35-445b-a540-8937af98bf31</ProjectGuid>
     <ProjectHome>
     </ProjectHome>
-    <StartupFile>reg_free_autoitx.py</StartupFile>
+    <StartupFile>simple_notepad_automation.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -40,7 +40,9 @@
     <Compile Include="reg_free_autoitx.py" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AutoItX3Dependency.manifest" />
     <Content Include="AutoItX3.dll.manifest" />
+    <Content Include="README.md" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" />
 </Project>

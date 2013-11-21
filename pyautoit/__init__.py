@@ -17,7 +17,7 @@ class AutoIt(object):
     
       # creates AutoItX using manifest instead of registy
       #next fails for some reason
-      self.com = NRegFreeCom.ActivationContext.CreateInstanceWithManifest(System.Guid.Parse("{1A671297-FA74-4422-80FA-6C5D8CE4DE04}"),autoItXManifest) 
+      self.com = NRegFreeCom.ActivationContext.CreateInstanceWithManifest(System.Guid("{1A671297-FA74-4422-80FA-6C5D8CE4DE04}"),autoItXManifest) 
       
       
       #def OtherMethod():
@@ -31,12 +31,8 @@ class AutoIt(object):
   def del__(self):
       System.Runtime.InteropServices.Marshal.FinalReleaseComObject(self.com)
 
-  def Run(self, program, workingdir = None, show_flag= None, opt_flag = None):
-      if workingdir is None:
-        return self.com.Run(program)
-      elif show_flag is None:
-        return self.com.Run(program, workingdir)
-      elif opt_flag is None:
+  def Run(self, program, workingdir = "", show_flag= 1, opt_flag = None):
+      if opt_flag is None:
         return self.com.Run(program, workingdir,show_flag)
       else: 
         return self.com.Run(program, workingdir,show_flag,opt_flag) 
