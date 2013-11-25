@@ -21,6 +21,8 @@ namespace nautoit
             var createdDirectly = NRegFreeCom.ActivationContext.CreateInstanceDirectly(module, clsid) as IAutoItX3;
             createdDirectly.Run("Notepad");
 
+            var nativeResult = NativeMethods_32.AU3_Run("Notepad", "", 1);
+
         }
     }
 }
