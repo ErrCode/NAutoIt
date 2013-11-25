@@ -2,21 +2,9 @@ import sys
 import clr
 
 
-sys.path.append("I:/src/IronAHK-master/Rusty/bin/Debug/")
 clr.AddReference("IronAHK.Rusty")
 
-from IronAHK.Rusty.Core import Run, WinWaitActive, Send, WinClose
 
-# out parameter in C# is bad for python
-# does not works, but work of AutoItX
-r = clr.Reference[int]()
-Run("notepad.exe", "","min",r)
-WinWaitActive("Untitled - Notepad")
-Send("This is some text.")
-WinClose("Untitled - Notepad")
-WinWaitActive("Notepad", "Save")
-#WinWaitActive("Notepad", "Do you want to save") # for windows xp
-Send("!n")
 
 # next is only half cause needs message loop and freaking hard to invoke
 from IronAHK.Rusty.Core import Gui, GuiControl
@@ -37,3 +25,17 @@ Gui("Add", "Progress", "vProgress wp r0.5 -Smooth","")
 Gui( "Font","","","")
 GuiControl("Focus","Time", "")
 Gui("Show","", "Countdown Timer", "") 
+
+
+from IronAHK.Rusty.Core import Run, WinWaitActive, Send, WinClose
+
+# out parameter in C# is bad for python
+# does not works, but work of AutoItX
+r = clr.Reference[int]()
+Run("notepad.exe", "","min",r)
+WinWaitActive("Untitled - Notepad")
+Send("This is some text.")
+WinClose("Untitled - Notepad")
+WinWaitActive("Notepad", "Save")
+#WinWaitActive("Notepad", "Do you want to save") # for windows xp
+Send("!n")
