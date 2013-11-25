@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nautoit", "nautoit.csproj", "{7AA95086-FCAD-4C98-BAD7-B58AE5C06876}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nautoit.sample", "..\nautoit.sample\nautoit.sample.csproj", "{C09ACE3D-DD97-43A1-9C6C-A75516C82C66}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -13,6 +15,10 @@ Global
 		{7AA95086-FCAD-4C98-BAD7-B58AE5C06876}.Debug|x86.Build.0 = Debug|x86
 		{7AA95086-FCAD-4C98-BAD7-B58AE5C06876}.Release|x86.ActiveCfg = Release|x86
 		{7AA95086-FCAD-4C98-BAD7-B58AE5C06876}.Release|x86.Build.0 = Release|x86
+		{C09ACE3D-DD97-43A1-9C6C-A75516C82C66}.Debug|x86.ActiveCfg = Debug|x86
+		{C09ACE3D-DD97-43A1-9C6C-A75516C82C66}.Debug|x86.Build.0 = Debug|x86
+		{C09ACE3D-DD97-43A1-9C6C-A75516C82C66}.Release|x86.ActiveCfg = Release|x86
+		{C09ACE3D-DD97-43A1-9C6C-A75516C82C66}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

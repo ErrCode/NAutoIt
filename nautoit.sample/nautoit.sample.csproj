@@ -5,18 +5,17 @@
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{7AA95086-FCAD-4C98-BAD7-B58AE5C06876}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{C09ACE3D-DD97-43A1-9C6C-A75516C82C66}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>nautoit</RootNamespace>
-    <AssemblyName>nautoit</AssemblyName>
+    <RootNamespace>nautoit.sample</RootNamespace>
+    <AssemblyName>nautoit.sample</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <TargetFrameworkProfile>
-    </TargetFrameworkProfile>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x86</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -34,19 +33,13 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup />
-  <PropertyGroup>
-    <StartupObject />
-  </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AutoItX3Lib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="AutoItX3Lib">
+      <HintPath>..\AutoItX3Lib.dll</HintPath>
       <EmbedInteropTypes>False</EmbedInteropTypes>
-      <HintPath>..\..\AutoItX3Lib.dll</HintPath>
     </Reference>
-    <Reference Include="CustomMarshalers" />
     <Reference Include="NRegFreeCom">
-      <HintPath>..\..\NRegFreeCom.dll</HintPath>
+      <HintPath>..\NRegFreeCom.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -57,23 +50,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="NativeMethods.cs" />
-    <Compile Include="AutoItX3Wrapper.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WrapperGenerator.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>WrapperGenerator.tt</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="WrapperGenerator.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>WrapperGenerator.cs</LastGenOutput>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <ProjectReference Include="..\nautoit\nautoit.csproj">
+      <Project>{7AA95086-FCAD-4C98-BAD7-B58AE5C06876}</Project>
+      <Name>nautoit</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

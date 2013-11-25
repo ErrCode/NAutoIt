@@ -6,7 +6,7 @@
     <ProjectGuid>f4e66022-ab35-445b-a540-8937af98bf31</ProjectGuid>
     <ProjectHome>
     </ProjectHome>
-    <StartupFile>reg_free_autoitx.py</StartupFile>
+    <StartupFile>Excel.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -35,6 +35,7 @@
     <Folder Include="pyautoit\" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Excel.py" />
     <Compile Include="my_first_script.py" />
     <Compile Include="pyautoit\__init__.py" />
     <Compile Include="reg_free_autoitx.py" />
