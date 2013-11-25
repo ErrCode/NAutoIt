@@ -7,22 +7,33 @@ Simply calling AutoItX from IronPython
 ```python
 from pyautoit import AutoIt
 
-auto = AutoIt()     
+au = AutoIt()     
  
-auto.Run("notepad.exe")
-auto.WinWaitActive("Untitled - Notepad")
-auto.Send("This is some text.")
-auto.WinClose("Untitled - Notepad")
-auto.WinWaitActive("Notepad", "Save")
-#auto.WinWaitActive("Notepad", "Do you want to save") # for windows xp
-auto.Send("!n")
+au.Run("notepad.exe")
+au.WinWaitActive("Untitled - Notepad")
+au.Send("This is some text.")
+au.WinClose("Untitled - Notepad")
+au.WinWaitActive("Notepad", "Save")
+#au.WinWaitActive("Notepad", "Do you want to save") # for windows xp
+au.Send("!n")
 ```
 
 ```python
 from pyautoit import AutoIt
 
-auto = AutoIt()
-# AutoItX does not provides this method, replaced via some python equivalent
-auto.MsgBox(64, "Tutorial", "Hello World!")
+au = AutoIt()
+au.MsgBox(64, "Tutorial", "Hello World!")
 ```
+
+Design
+===
+- exception raised from method when `error` detected
+- return (False, Exception) tuple when better not to thow exception
+
+
+
+
+
+
+
 

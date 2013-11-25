@@ -28,8 +28,10 @@ namespace nautoit.sample
 
             //var nativeResult = NativeMethods_32.AU3_Run("Notepad", "", 1);
 
-            var wrapper = new AutoItX3Wrapper();
-            wrapper.Run("Notepad");
+            //var wrapper = new AutoItX3Wrapper(manifest);
+            // wrapper.Run("Notepad");
+
+            autoitrt.Run("Notepad");
 
         }
     }

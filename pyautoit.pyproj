@@ -6,7 +6,7 @@
     <ProjectGuid>f4e66022-ab35-445b-a540-8937af98bf31</ProjectGuid>
     <ProjectHome>
     </ProjectHome>
-    <StartupFile>Excel.py</StartupFile>
+    <StartupFile>excel_example.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -35,14 +35,12 @@
     <Folder Include="pyautoit\" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Excel.py" />
+    <Compile Include="pyautoit\Excel.py" />
+    <Compile Include="excel_example.py" />
     <Compile Include="my_first_script.py" />
     <Compile Include="pyautoit\__init__.py" />
-    <Compile Include="reg_free_autoitx.py" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="AutoItX3Dependency.manifest" />
-    <Content Include="AutoItX3.dll.manifest" />
     <Content Include="README.md" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" />

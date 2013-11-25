@@ -57,6 +57,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="autoitrt.cs" />
     <Compile Include="NativeMethods.cs" />
     <Compile Include="AutoItX3Wrapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

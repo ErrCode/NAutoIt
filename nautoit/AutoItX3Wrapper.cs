@@ -8,37 +8,41 @@ namespace nautoit
 
     public class AutoItX3Wrapper : IAutoItX3
     {
-        //NOTE: next works in C# but fails running under IronPuthon
-        //private AutoItX3 _com;
+        //NOTE: next works in C# but fails running under IronPython
+        private AutoItX3 _com;
 
-        //public AutoItX3Wrapper(string manifest)
-        //{
-        //    var clsid = new Guid("{1A671297-FA74-4422-80FA-6C5D8CE4DE04}");
-        //    // creates AutoItX using manifest instead of registy
-        //    var createdViaManifest = NRegFreeCom.ActivationContext.CreateInstanceWithManifest(clsid, manifest);
-        //    _com = (AutoItX3)createdViaManifest;
-        //}
+        // creates AutoItX without using registy
+        // needs manifest and AutoItX dll located in the same folder
+        // needs AutoItX has the same version as in manifest
+        // python interpereter should of the same bitness as AutoItX (32 can use 32 bit, 64 can use 64 bit dll only)
+        public AutoItX3Wrapper(string manifest)
+        {
+            var clsid = new Guid("{1A671297-FA74-4422-80FA-6C5D8CE4DE04}");
+            // creates AutoItX using manifest instead of registry
+            var createdViaManifest = NRegFreeCom.ActivationContext.CreateInstanceWithManifest(clsid, manifest);
+            _com = (AutoItX3)createdViaManifest;
+        }
 
 
 
         public void Init()
         {
-            NativeMethods_32.AU3_Init();
+            throw new NotImplementedException();
         }
 
         public int AutoItSetOption(string strOption, int nValue)
         {
-            return NativeMethods_32.AU3_AutoItSetOption(strOption, nValue);
+            throw new NotImplementedException();
         }
 
         public void BlockInput(int nFlag)
         {
-            NativeMethods_32.AU3_BlockInput(nFlag);
+            throw new NotImplementedException();
         }
 
         public int CDTray(string strDrive, string strAction)
         {
-            return NativeMethods_32.AU3_CDTray(strDrive, strAction);
+            throw new NotImplementedException();
         }
 
         public string ClipGet()
@@ -54,15 +58,12 @@ namespace nautoit
         public int ControlClick(string strTitle, string strText, string strControl, string strButton = "LEFT", int nNumClicks = 1,
                                 int nX = -2147483647, int nY = -2147483647)
         {
-            return NativeMethods_32.AU3_ControlClick(strTitle, strTitle, strControl, strButton, nNumClicks, nX, nY);
+            throw new NotImplementedException();
         }
 
         public string ControlCommand(string strTitle, string strText, string strControl, string strCommand, string strExtra)
         {
-            var bBufSize = 1000;
-            var szResult = new StringBuilder(bBufSize);
-            NativeMethods_32.AU3_ControlCommand(strTitle, strTitle, strControl, strCommand, strExtra, szResult, bBufSize);
-            return szResult.ToString();
+            throw new NotImplementedException();
         }
 
         public int ControlDisable(string strTitle, string strText, string strControl)
@@ -309,8 +310,7 @@ namespace nautoit
 
         public int Run(string strRun, string strDir = "", int nShowFlags = 1)
         {
-            //return _com.Run(strRun, strDir, nShowFlags);
-            return NativeMethods_32.AU3_Run(strRun, strDir, nShowFlags);
+            return _com.Run(strRun, strDir, nShowFlags);
         }
 
         public int RunAsSet(string strUser, string strDomain, string strPassword, int nOptions)
@@ -325,7 +325,7 @@ namespace nautoit
 
         public void Send(string strSendText, int nMode = 0)
         {
-            NativeMethods_32.AU3_Send(strSendText, nMode);
+            throw new NotImplementedException();
         }
 
         public int Shutdown(int nFlags)
@@ -335,7 +335,7 @@ namespace nautoit
 
         public void Sleep(int nMilliseconds)
         {
-            NativeMethods_32.AU3_Sleep(nMilliseconds);
+            throw new NotImplementedException();
         }
 
         public string StatusbarGetText(string strTitle, string strText = "", int nPart = 1)
@@ -350,7 +350,7 @@ namespace nautoit
 
         public void WinActivate(string strTitle, string strText = "")
         {
-            NativeMethods_32.AU3_WinActivate(strTitle, strText);
+            throw new NotImplementedException();
         }
 
         public int WinActive(string strTitle, string strText = "")
@@ -360,7 +360,7 @@ namespace nautoit
 
         public int WinClose(string strTitle, string strText = "")
         {
-            return NativeMethods_32.AU3_WinClose(strTitle, strText);
+            throw new NotImplementedException();
         }
 
         public int WinExists(string strTitle, string strText = "")
@@ -497,7 +497,7 @@ namespace nautoit
 
         public int WinWaitActive(string strTitle, string strText = "", int nTimeout = 0)
         {
-            return NativeMethods_32.AU3_WinWaitActive(strTitle, strText, nTimeout);
+            throw new NotImplementedException();
         }
 
         public int WinWaitClose(string strTitle, string strText = "", int nTimeout = 0)
@@ -510,7 +510,7 @@ namespace nautoit
             throw new NotImplementedException();
         }
 
-        public int error { get { return NativeMethods_32.AU3_error(); } }
+        public int error { get; private set; }
         public int SW_HIDE { get; private set; }
         public int SW_MAXIMIZE { get; private set; }
         public int SW_MINIMIZE { get; private set; }

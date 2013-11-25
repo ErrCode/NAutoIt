@@ -2,6 +2,6 @@
 
 from pyautoit import AutoIt
 
-auto = AutoIt()
+au = AutoIt()
 # AutoItX does not provides this method, replaced via some python equivalent
-auto.MsgBox(64, "Tutorial", "Hello World!")
+au.MsgBox(64, "Tutorial", "Hello World!")
