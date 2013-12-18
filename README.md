@@ -25,10 +25,17 @@ au = AutoIt()
 au.MsgBox(64, "Tutorial", "Hello World!")
 ```
 
+
+
 Design
 ===
 - exception raised from method when `error` detected
 - return (False, Exception) tuple when better not to thow exception
+
+Why Python
+===
+https://www.diigo.com/list/dzmitry_lahoda/Python+UI+Automation/2tiwxcs10
+
 
 
 
