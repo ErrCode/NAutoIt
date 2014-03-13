@@ -10,7 +10,7 @@ namespace nautoit
 {
 
     
-    public partial class NativeConstants
+    internal partial class NativeConstants
     {
 
         /// __AUTOIT3_H -> 
@@ -28,7 +28,7 @@ namespace nautoit
     }
 
     [System.Runtime.InteropServices.StructLayoutAttribute(System.Runtime.InteropServices.LayoutKind.Sequential)]
-    public struct Point
+    internal struct Point
     {
 
         /// LONG->int
@@ -38,7 +38,7 @@ namespace nautoit
         public int y;
     }
 
-    public partial class NativeMethods_32
+    internal partial class NativeMethods_32
     {
 
         /// Return Type: void

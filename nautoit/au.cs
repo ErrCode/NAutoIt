@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Runtime.InteropServices;
 
 namespace nautoit
 {
-    public static class autoitrt
+    public static class au
     {
-        public static void Init()
+        static au()
         {
             NativeMethods_32.AU3_Init();
         }
@@ -311,7 +312,21 @@ namespace nautoit
             throw new NotImplementedException();
         }
         
+        public static object ObjCreate(string className){
+            Type oType = Type.GetTypeFromProgID(className);	
+            return Activator.CreateInstance(oType);
+        }
         
+        [DllImportAttribute("user32.dll", CharSet=CharSet.Auto)]
+        private static extern uint MessageBox(IntPtr hWnd, String text, String caption, int options);
+        
+        public static uint MsgBox(int flag, string title,string text,int options = 0,long hwnd = 0){
+	        // AutoIt(X) does not provides this method
+	        var result = MessageBox(new IntPtr(hwnd),text,title,flag);
+	        return result;
+         }
+    
+
 
         public static void Send(string strSendText, int nMode = 0)
         {

@@ -36,14 +36,18 @@
     <Folder Include="pyautoit\" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="open_close_excel_many_times.py" />
-    <Compile Include="pyautoit\Excel.py" />
+    <None Include="open_close_excel_many_times.py" />
+    <None Include="pyautoit\Excel.py" />
     <None Include="excel_example.py" />
     <None Include="my_first_script.py" />
-    <Compile Include="pyautoit\__init__.py" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="README.md" />
+    <None Include="README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="nautoit">
+      <HintPath>nautoit.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" />
 </Project>

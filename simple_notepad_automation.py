@@ -1,7 +1,8 @@
-from pyautoit import AutoIt
-
-au = AutoIt()     
- 
+import clr
+clr.AddReference("System")
+clr.AddReferenceToFile("nautoit.dll")     
+from nautoit import au
+     
 au.Run("notepad.exe")
 au.WinWaitActive("Untitled - Notepad")
 au.Send("This is some text.")
