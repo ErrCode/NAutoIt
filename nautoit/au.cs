@@ -204,9 +204,16 @@ namespace nautoit
             throw new NotImplementedException();
         }
 
-        public static int MouseMove(int nX, int nY, int nSpeed = -1)
+        /// <summary>
+        /// Moves the mouse pointer.
+        /// </summary>
+        /// <param name="x">The screen x coordinate to move the mouse to.</param>
+        /// <param name="y">The screen y coordinate to move the mouse to.</param>
+        /// <param name="speed">the speed to move the mouse in the range 1 (fastest) to 100 (slowest). A speed of 0 will move the mouse instantly. Default speed is 10.</param>
+        /// <returns></returns>
+        public static int MouseMove(int x, int y, int speed = 10)
         {
-            throw new NotImplementedException();
+        	return NativeMethods_32.AU3_MouseMove(x,y,speed);
         }
 
         public static void MouseUp(string strButton = "LEFT")
