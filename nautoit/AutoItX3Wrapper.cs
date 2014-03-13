@@ -22,7 +22,7 @@ namespace nautoit
             var createdViaManifest = NRegFreeCom.ActivationContext.CreateInstanceWithManifest(clsid, manifest);
             _com = (AutoItX3)createdViaManifest;
         }
-
+    
 
 
         public void Init()
@@ -30,6 +30,9 @@ namespace nautoit
             throw new NotImplementedException();
         }
 
+           
+  
+        
         public int AutoItSetOption(string strOption, int nValue)
         {
             throw new NotImplementedException();

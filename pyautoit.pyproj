@@ -16,6 +16,7 @@
     <OutputPath>.</OutputPath>
     <Name>pyautoit</Name>
     <RootNamespace>pyautoitx</RootNamespace>
+    <OutputType>Library</OutputType>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -35,9 +36,10 @@
     <Folder Include="pyautoit\" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="open_close_excel_many_times.py" />
     <Compile Include="pyautoit\Excel.py" />
-    <Compile Include="excel_example.py" />
-    <Compile Include="my_first_script.py" />
+    <None Include="excel_example.py" />
+    <None Include="my_first_script.py" />
     <Compile Include="pyautoit\__init__.py" />
   </ItemGroup>
   <ItemGroup>

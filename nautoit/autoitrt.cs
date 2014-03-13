@@ -295,7 +295,10 @@ namespace nautoit
 
         public static int Run(string strRun, string strDir = "", int nShowFlags = 1)
         {
-            return NativeMethods_32.AU3_Run(strRun, strDir, nShowFlags);
+            var result = NativeMethods_32.AU3_Run(strRun, strDir, nShowFlags);
+            if (result == 0)
+            	throw new System.Runtime.InteropServices.ExternalException("@error",NativeMethods_32.AU3_error());
+            return result;
         }
 
         public static int RunAsSet(string strUser, string strDomain, string strPassword, int nOptions)
@@ -307,6 +310,8 @@ namespace nautoit
         {
             throw new NotImplementedException();
         }
+        
+        
 
         public static void Send(string strSendText, int nMode = 0)
         {

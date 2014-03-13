@@ -1,7 +1,7 @@
 pyautoit
 ===========
 
-Simply calling AutoItX from IronPython
+Calling AutoIt from IronPython
 
 
 ```python
@@ -25,17 +25,10 @@ au = AutoIt()
 au.MsgBox(64, "Tutorial", "Hello World!")
 ```
 
-
-
 Design
 ===
-- exception raised from method when `error` detected
-- return (False, Exception) tuple when better not to thow exception
-
-Why Python
-===
-https://www.diigo.com/list/dzmitry_lahoda/Python+UI+Automation/2tiwxcs10
-
+- exception raised from method when `@error` detected or returned 
+- return (False, Exception) tuple when better not to throw exception (e.g. performance)
 
 
 
