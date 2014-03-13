@@ -305,7 +305,7 @@ namespace nautoit
         {
             var result = NativeMethods_32.AU3_Run(strRun, strDir, nShowFlags);
             if (result == 0)
-            	throw new System.Runtime.InteropServices.ExternalException("@error",NativeMethods_32.AU3_error());
+            	throw new AutoItException("@error",NativeMethods_32.AU3_error());
             return result;
         }
 

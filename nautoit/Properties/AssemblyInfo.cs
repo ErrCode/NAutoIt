@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("nautoit")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("nautoit")]
 [assembly: AssemblyCopyright("Copyright ©  2013")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
+
 
 // Setting ComVisible to false makes the types in this assembly not visible 
 // to COM components.  If you need to access a type in this assembly from 

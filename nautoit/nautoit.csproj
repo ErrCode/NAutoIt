@@ -66,6 +66,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="au.cs" />
+    <Compile Include="AutoItException.cs" />
     <Compile Include="NativeMethods_au.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
