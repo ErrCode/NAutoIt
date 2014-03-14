@@ -34,7 +34,7 @@ au.MsgBox(64, "Tutorial", "Hello World!")
 ```
 
 You can use some of .NET either like like MS UI Automation or White 
-===
+---
 
 ```python
 import sys
