@@ -37,11 +37,20 @@ Design
 ===
 - Exception raised from method when `@error` detected or returned 
 - return (False, Exception) tuple when better not to throw exception (e.g. performance)
-
 - IronPython uses reflection(IDispatch) for invocation of COM interfaces even if object was type casted to interop interfaces.
 Which fails to work if using AutoItX COM without registration[1].
-
 [1] http://stackoverflow.com/questions/9209910/how-to-use-registration-free-com-dll-in-dot-net/9229764?noredirect=1#comment29983358_9229764 
+
+
+Why python
+===
+Python is widely used language in testing.
+Python has great pool of developers and other people (e.g. data science)
+
+Writing all in Python will allow to create some abstract modules which represend 'logic of test' abstracted of underlying UI technology.
+Unlike C# it is much easirer to develop, tune and read, which suits more for tests.
+There are free Python IDEs to author tests.
+Allows running Cherking Python to allow write 'bussiness user' steps to allow bussiness users to participate.
 
 
 
