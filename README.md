@@ -2,9 +2,9 @@ NAutoIt
 ===========
 
 
-*AutoItX3_x64.dll or AutoItX3.dll should be located in the same folder as nautoit.dll"
+`AutoItX3_x64.dll` or `AutoItX3.dll` should be located in the same folder as `nautoit.dll`
  
-*IronPython* interpereter should of the same bitness as AutoItX (32 can use 32 bit, 64 can use 64 bit dll only)
+**IronPython** interpereter should of the same bitness as AutoItX (32 can use 32 bit, 64 can use 64 bit dll only)
 
 Calling AutoIt from IronPython.
 
@@ -33,10 +33,10 @@ au = AutoIt()
 au.MsgBox(64, "Tutorial", "Hello World!")
 ```
 
-You can use some of .NET either
-```python
-#IronPython case use other .NET testing framework like MS UI Automation or White
+You can use some of .NET either like like MS UI Automation or White 
+===
 
+```python
 import sys
 import os
 import clr
@@ -74,7 +74,7 @@ Why python
 - Python has great pool of developers and other people (e.g. data science )
 - Writing all in Python will allow to create some abstract modules which represend **logic of test** abstracted of underlying UI technology.
 - Unlike C# it is much easirer to develop, tune in runtime and read, which suits more for tests.
-- There are free Python IDEs to author tests.
+- There are **free** Python IDEs to author tests.
 - Allows running Cherking Python to allow write **bussiness readable user** steps to allow bussiness users to participate. [3]
 
 
