@@ -52,5 +52,8 @@
   <ItemGroup>
     <None Include="mouse.py" />
   </ItemGroup>
+  <ItemGroup>
+    <Compile Include="white_integration.py" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" />
 </Project>
