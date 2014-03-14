@@ -75,7 +75,7 @@ Why python
 - Writing all in Python will allow to create some abstract modules which represend **logic of test** abstracted of underlying UI technology.
 - Unlike C# it is much easirer to develop, tune in runtime and read, which suits more for tests.
 - There are free Python IDEs to author tests.
-- Allows running Cherking Python to allow write **bussiness user*** steps to allow bussiness users to participate. [3]
+- Allows running Cherking Python to allow write **bussiness readable user** steps to allow bussiness users to participate. [3]
 
 
 [1]: http://stackoverflow.com/questions/9209910/how-to-use-registration-free-com-dll-in-dot-net/9229764?noredirect=1#comment29983358_9229764 
