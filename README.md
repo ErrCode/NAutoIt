@@ -33,6 +33,32 @@ au = AutoIt()
 au.MsgBox(64, "Tutorial", "Hello World!")
 ```
 
+You can use some of .NET either
+```python
+#IronPython case use other .NET testing framework like MS UI Automation or White
+
+import sys
+import os
+import clr
+
+clr.AddReferenceToFile("nautoit.dll")   
+
+clr.AddReferenceToFile("TestStack.White.dll")     
+
+from nautoit import au
+from  TestStack.White import Application
+from  TestStack.White.InputDevices import Keyboard
+
+application = Application.Launch("notepad.exe");
+window = application.GetWindow("Untitled - Notepad");
+window.Focus()
+Keyboard.Instance.Enter("This is some text.");
+window.Close()
+#Allows step by step migration from AutoIt to anything else
+close = au.WinWaitActive("Notepad", "Save")
+au.Send("!n")
+```
+
 Design
 ===
 - Exception raised from method when `@error` detected or returned 
@@ -44,13 +70,12 @@ Which fails to work if using AutoItX COM without registration[1].
 
 Why python
 ===
-Python is widely used language in testing.
-Python has great pool of developers and other people (e.g. data science)
-
-Writing all in Python will allow to create some abstract modules which represend 'logic of test' abstracted of underlying UI technology.
-Unlike C# it is much easirer to develop, tune and read, which suits more for tests.
-There are free Python IDEs to author tests.
-Allows running Cherking Python to allow write 'bussiness user' steps to allow bussiness users to participate.
+- Python is widely used language in testing.
+- Python has great pool of developers and other people (e.g. data science)
+- Writing all in Python will allow to create some abstract modules which represend 'logic of test' abstracted of underlying UI technology.
+- Unlike C# it is much easirer to develop, tune and read, which suits more for tests.
+- There are free Python IDEs to author tests.
+- Allows running Cherking Python to allow write 'bussiness user' steps to allow bussiness users to participate.
 
 
 
