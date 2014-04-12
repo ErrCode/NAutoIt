@@ -79,16 +79,16 @@ Why python
 
 Example
 ----
-Bussiness logic:
+Business logic:
 ```gherkin
-Then rows are sorted by 'Name' 
+Then rows are sorted by 'Count' 
 ```
 
-Test logic agains abstract (obtained from service, from Windows or HTML UI):
+Test logic against abstract table(obtained from service, from Windows or HTML UI):
 ```
 @then('rows are sorted by "{name}"')
 def step_impl(context,name):
-    assert context.table['Name'].sorted is True
+    assert context.table[name].sorted is True
 ```
 
 [1]: http://stackoverflow.com/questions/9209910/how-to-use-registration-free-com-dll-in-dot-net/9229764?noredirect=1#comment29983358_9229764 
