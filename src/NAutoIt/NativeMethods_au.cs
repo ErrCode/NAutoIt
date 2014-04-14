@@ -6,7 +6,7 @@ using System.Text;
 //////////////////////////////////////////////
 //GENERATED VIA PINVOKE INTEROP ASSISTANT 1.0
 //////////////////////////////////////////////
-namespace nautoit
+namespace AutoIt
 {
 
     
@@ -27,29 +27,9 @@ namespace nautoit
         public const int AU3_INTDEFAULT = -2147483647;
     }
 
-    [System.Runtime.InteropServices.StructLayoutAttribute(System.Runtime.InteropServices.LayoutKind.Sequential)]
-    internal struct Point
-    {
-
-        /// LONG->int
-        public int x;
-
-        /// LONG->int
-        public int y;
-    }
 
     internal partial class NativeMethods_32
     {
-
-        /// Return Type: void
-        [System.Runtime.InteropServices.DllImportAttribute("AutoItX3", EntryPoint = "AU3_Init")]
-        public static extern void AU3_Init();
-
-
-        /// Return Type: int
-        [System.Runtime.InteropServices.DllImportAttribute("AutoItX3", EntryPoint = "AU3_error")]
-        public static extern int AU3_error();
-
 
         /// Return Type: int
         ///szOption: LPCWSTR->WCHAR*
@@ -58,19 +38,10 @@ namespace nautoit
         public static extern int AU3_AutoItSetOption([System.Runtime.InteropServices.InAttribute()] [System.Runtime.InteropServices.MarshalAsAttribute(System.Runtime.InteropServices.UnmanagedType.LPWStr)] string szOption, int nValue);
 
 
-        /// Return Type: void
-        ///nFlag: int
-        [System.Runtime.InteropServices.DllImportAttribute("AutoItX3", EntryPoint = "AU3_BlockInput")]
-        public static extern void AU3_BlockInput(int nFlag);
 
 
-        /// Return Type: int
-        ///szDrive: LPCWSTR->WCHAR*
-        ///szAction: LPCWSTR->WCHAR*
-        [System.Runtime.InteropServices.DllImportAttribute("AutoItX3", EntryPoint = "AU3_CDTray")]
-        public static extern int AU3_CDTray([System.Runtime.InteropServices.InAttribute()] [System.Runtime.InteropServices.MarshalAsAttribute(System.Runtime.InteropServices.UnmanagedType.LPWStr)] string szDrive, [System.Runtime.InteropServices.InAttribute()] [System.Runtime.InteropServices.MarshalAsAttribute(System.Runtime.InteropServices.UnmanagedType.LPWStr)] string szAction);
 
-
+  
         /// Return Type: void
         ///szClip: LPWSTR->WCHAR*
         ///nBufSize: int
@@ -422,7 +393,7 @@ namespace nautoit
         ///nStep: int
         ///pPointResult: LPPOINT->tagPOINT*
         [System.Runtime.InteropServices.DllImportAttribute("AutoItX3", EntryPoint = "AU3_PixelSearch")]
-        public static extern void AU3_PixelSearch(int nLeft, int nTop, int nRight, int nBottom, int nCol, int nVar, int nStep, ref Point pPointResult);
+        public static extern void AU3_PixelSearch(int nLeft, int nTop, int nRight, int nBottom, int nCol, int nVar, int nStep, ref AutoItX_DLLImport.POINT pPointResult);
 
 
         /// Return Type: int
@@ -458,19 +429,7 @@ namespace nautoit
         public static extern int AU3_ProcessWaitClose([System.Runtime.InteropServices.InAttribute()] [System.Runtime.InteropServices.MarshalAsAttribute(System.Runtime.InteropServices.UnmanagedType.LPWStr)] string szProcess, int nTimeout);
 
 
-        /// Return Type: int
-        ///szKeyname: LPCWSTR->WCHAR*
-        [System.Runtime.InteropServices.DllImportAttribute("AutoItX3", EntryPoint = "AU3_RegDeleteKey")]
-        public static extern int AU3_RegDeleteKey([System.Runtime.InteropServices.InAttribute()] [System.Runtime.InteropServices.MarshalAsAttribute(System.Runtime.InteropServices.UnmanagedType.LPWStr)] string szKeyname);
-
-
-        /// Return Type: int
-        ///szKeyname: LPCWSTR->WCHAR*
-        ///szValuename: LPCWSTR->WCHAR*
-        [System.Runtime.InteropServices.DllImportAttribute("AutoItX3", EntryPoint = "AU3_RegDeleteVal")]
-        public static extern int AU3_RegDeleteVal([System.Runtime.InteropServices.InAttribute()] [System.Runtime.InteropServices.MarshalAsAttribute(System.Runtime.InteropServices.UnmanagedType.LPWStr)] string szKeyname, [System.Runtime.InteropServices.InAttribute()] [System.Runtime.InteropServices.MarshalAsAttribute(System.Runtime.InteropServices.UnmanagedType.LPWStr)] string szValuename);
-
-
+ 
         /// Return Type: void
         ///szKeyname: LPCWSTR->WCHAR*
         ///nInstance: int

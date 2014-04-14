@@ -33,7 +33,7 @@ printfn "Out folder: %s" packages
 //%SystemRoot%\Microsoft.NET\Framework\v4.0.30319\regasm.exe /tlb:"AutoItX3.tlb" "packaging\AutoItX\lib\AutoItX\AutoItX3.dll"
 
 // get current version
-let dllName = "AutoItX3.dll";
+let dllName = "AutoItX3_x64.dll";
 let dll = Path.Combine(packaging,dllName)
 let verInfo =  FileVersionInfo.GetVersionInfo(dll)
 let ver = String.Format("{0}.{1}.{2}.{3}",verInfo.FileMajorPart, verInfo.FileMinorPart,verInfo.FileBuildPart,verInfo.FilePrivatePart)
@@ -42,7 +42,7 @@ let ver = String.Format("{0}.{1}.{2}.{3}",verInfo.FileMajorPart, verInfo.FileMin
 let tlbimp = "tlbimp.exe"
 let manifestName = dllName + ".manifest"
 let interop = Path.Combine(packaging,"AutoItX3.Interop.dll")
-let interopCmd =  dll+  " /asmversion:" + ver + " /out:" + interop
+let interopCmd =  dll+  " /asmversion:" + ver + " /out:" + interop + " /machine:Agnostic /nologo"
 let p = new Process();
 p.StartInfo.Arguments <- interopCmd
 p.StartInfo.UseShellExecute <- false

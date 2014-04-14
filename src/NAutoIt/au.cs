@@ -3,29 +3,32 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Runtime.InteropServices;
-
+using AutoIt;
 namespace nautoit
 {
+	/// <summary>
+	/// 
+	/// </summary>
     public static class au
     {
         static au()
         {
-            NativeMethods_32.AU3_Init();
+            AutoItX.Init();
         }
 
         public static int AutoItSetOption(string strOption, int nValue)
         {
-            return NativeMethods_32.AU3_AutoItSetOption(strOption, nValue);
+            return AutoItX.AutoItSetOption(strOption, nValue);
         }
 
         public static void BlockInput(int nFlag)
         {
-            NativeMethods_32.AU3_BlockInput(nFlag);
+            AutoItX.BlockInput(nFlag);
         }
 
         public static int CDTray(string strDrive, string strAction)
         {
-            return NativeMethods_32.AU3_CDTray(strDrive, strAction);
+        	return AutoItX.CDTray(strDrive,strAction);
         }
 
         public static string ClipGet()
@@ -41,15 +44,12 @@ namespace nautoit
         public static int ControlClick(string strTitle, string strText, string strControl, string strButton = "LEFT", int nNumClicks = 1,
                                 int nX = -2147483647, int nY = -2147483647)
         {
-            return NativeMethods_32.AU3_ControlClick(strTitle, strTitle, strControl, strButton, nNumClicks, nX, nY);
+            return AutoItX.ControlClick(strTitle, strTitle, strControl, strButton, nNumClicks, nX, nY);
         }
 
         public static string ControlCommand(string strTitle, string strText, string strControl, string strCommand, string strExtra)
         {
-            var bBufSize = 1000;
-            var szResult = new StringBuilder(bBufSize);
-            NativeMethods_32.AU3_ControlCommand(strTitle, strTitle, strControl, strCommand, strExtra, szResult, bBufSize);
-            return szResult.ToString();
+            return AutoItX.ControlCommand(strTitle, strTitle, strControl, strCommand, strExtra);
         }
 
         public static int ControlDisable(string strTitle, string strText, string strControl)
@@ -213,7 +213,7 @@ namespace nautoit
         /// <returns></returns>
         public static int MouseMove(int x, int y, int speed = 10)
         {
-        	return NativeMethods_32.AU3_MouseMove(x,y,speed);
+        	return AutoItX.MouseMove(x,y,speed);
         }
 
         public static void MouseUp(string strButton = "LEFT")
@@ -273,12 +273,12 @@ namespace nautoit
 
         public static int RegDeleteKey(string strKeyname)
         {
-            return NativeMethods_32.AU3_RegDeleteKey(strKeyname);
+            return AutoItX.RegDeleteKey(strKeyname);
         }
 
         public static int RegDeleteVal(string strKeyname, string strValuename)
         {
-            return NativeMethods_32.AU3_RegDeleteVal(strKeyname, strValuename);
+            return AutoItX.RegDeleteVal(strKeyname, strValuename);
         }
 
         public static string RegEnumKey(string strKeyname, int nInstance)
@@ -303,9 +303,9 @@ namespace nautoit
 
         public static int Run(string strRun, string strDir = "", int nShowFlags = 1)
         {
-            var result = NativeMethods_32.AU3_Run(strRun, strDir, nShowFlags);
+            var result = AutoItX.Run(strRun, strDir, nShowFlags);
             if (result == 0)
-            	throw new AutoItException("@error",NativeMethods_32.AU3_error());
+            	throw new AutoItException("Failed to run process",AutoItX.ErrorCode());
             return result;
         }
 
@@ -337,7 +337,7 @@ namespace nautoit
 
         public static void Send(string strSendText, int nMode = 0)
         {
-            NativeMethods_32.AU3_Send(strSendText, nMode);
+            AutoItX.Send(strSendText, nMode);
         }
 
         public static int Shutdown(int nFlags)
@@ -347,7 +347,7 @@ namespace nautoit
 
         public static void Sleep(int nMilliseconds)
         {
-            NativeMethods_32.AU3_Sleep(nMilliseconds);
+            AutoItX.Sleep(nMilliseconds);
         }
 
         public static string StatusbarGetText(string strTitle, string strText = "", int nPart = 1)
@@ -362,7 +362,7 @@ namespace nautoit
 
         public static void WinActivate(string strTitle, string strText = "")
         {
-            NativeMethods_32.AU3_WinActivate(strTitle, strText);
+            AutoItX.WinActivate(strTitle, strText);
         }
 
         public static int WinActive(string strTitle, string strText = "")
@@ -372,7 +372,7 @@ namespace nautoit
 
         public static int WinClose(string strTitle, string strText = "")
         {
-            return NativeMethods_32.AU3_WinClose(strTitle, strText);
+            return AutoItX.WinClose(strTitle, strText);
         }
 
         public static int WinExists(string strTitle, string strText = "")
@@ -504,17 +504,17 @@ namespace nautoit
 
         public static int WinWait(string strTitle, string strText = "", int nTimeout = 0)
         {
-            return NativeMethods_32.AU3_WinWait(strTitle, strText, nTimeout);
+            return AutoItX.WinWait(strTitle, strText, nTimeout);
         }
 
         public static int WinWaitActive(string strTitle, string strText = "", int nTimeout = 0)
         {
-            return NativeMethods_32.AU3_WinWaitActive(strTitle, strText, nTimeout);
+            return AutoItX.WinWaitActive(strTitle, strText, nTimeout);
         }
 
         public static int WinWaitClose(string strTitle, string strText = "", int nTimeout = 0)
         {
-            return NativeMethods_32.AU3_WinWaitClose(strTitle, strText, nTimeout);
+            return AutoItX.WinWaitClose(strTitle, strText, nTimeout);
         }
 
         public static int WinWaitNotActive(string strTitle, string strText = "", int nTimeout = 0)
@@ -522,7 +522,7 @@ namespace nautoit
             throw new NotImplementedException();
         }
 
-        public static int error { get { return NativeMethods_32.AU3_error(); } }
+        public static int error { get { return AutoItX.ErrorCode(); } }
         //public static int SW_HIDE { get; private set; }
         //public static int SW_MAXIMIZE { get; private set; }
         //public static int SW_MINIMIZE { get; private set; }
