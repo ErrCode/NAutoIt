@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<assembly manifestVersion="1.0" xmlns="urn:schemas-microsoft-com:asm.v1">
+	<assemblyIdentity type="win32" name="AutoItX3.dll" version="3.3.10.2" />
+	<file name = "AutoItX3.dll">
+		<comClass
+			clsid="{1A671297-FA74-4422-80FA-6C5D8CE4DE04}"
+			threadingModel = "Free" />
+		<typelib tlbid="{F8937E53-D444-4E71-9725-35B64210CC3B}"
+			   version="1.0" helpdir=""/>
+	</file>
+	<comInterfaceExternalProxyStub
+		name="IAutoItX3"
+      iid="{3D54C6B8-D283-40E0-8FAB-C97F05947EE8}"
+    proxyStubClsid32="{00020424-0000-0000-C000-000000000046}"
+    baseInterface="{00000000-0000-0000-C000-000000000046}"
+      tlbid = "{F8937E53-D444-4E71-9275-35B64210CC3B}" />
+</assembly>

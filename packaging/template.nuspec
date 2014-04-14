@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>AutoItX</id>
+    <version>@build.number@</version>
+    <title>AutoItX</title>
+    <authors>Jonathan Bennett and the AutoIt Team</authors>
+    <owners>Dzmitry Lahoda</owners>
+    <licenseUrl>http://www.autoitscript.com/autoit3/docs/license.htm</licenseUrl>
+    <projectUrl>https://github.com/asd-and-Rizzo/NAutoIt</projectUrl>
+    <iconUrl>http://aut1.autoit-cdn.com/site/wp-content/themes/TheCorporation/images/logo@2x.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>AutoItX with PowerShell, .NET, C, COM, COM interop and reg free COM interfaces</description>
+    <tags>automation windows</tags>
+  </metadata>
+</package>

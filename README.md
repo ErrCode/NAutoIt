@@ -1,14 +1,17 @@
 NAutoIt
-===========
+=======
 
+.NET and IronPython view onto AutoItX
+
+
+How to
+===
 
 `AutoItX3_x64.dll` or `AutoItX3.dll` should be located in the same folder as `nautoit.dll`
  
 **IronPython** interpereter should of the same bitness as AutoItX (32 can use 32 bit, 64 can use 64 bit dll only)
 
 Calling AutoIt from IronPython.
-
-
 
 ```python
 import clr
@@ -77,6 +80,9 @@ Why python
 - There are **free** Python IDEs to author tests.
 - Allows running Cherking Python to allow write **bussiness readable user** steps to allow bussiness users to participate. This steps guide and frame tests allowing greate level of sustainability.[3]
 
+TODO
+===
+- Generate download AutoItX archive and generate interop+manifest+nuspec automatically
 
 [1]: http://stackoverflow.com/questions/9209910/how-to-use-registration-free-com-dll-in-dot-net/9229764?noredirect=1#comment29983358_9229764 
 [2]: https://www.diigo.com/list/dzmitry_lahoda/Python+UI+Automation/2tiwxcs10
