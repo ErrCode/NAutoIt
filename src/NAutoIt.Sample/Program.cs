@@ -16,6 +16,7 @@ namespace nautoit.sample
         /// testing calls in C# before IronPython
         static void Main(string[] args)
         {
+        	
         	// creates AutoItX without using registy
             //var clsid = new Guid("{1A671297-FA74-4422-80FA-6C5D8CE4DE04}");
              

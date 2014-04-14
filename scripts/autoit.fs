@@ -64,3 +64,8 @@ File.WriteAllText(x86,x86Txt)
 // copu scripts for COM un/registration
 File.Copy(packRoot+"register.bat",packaging+"register.bat",true)
 File.Copy(packRoot+"unregister.bat",packaging+"unregister.bat",true)
+
+// prepare nuspec
+let nuTemplate = File.ReadAllText(Path.Combine(packRoot,"template.nuspec"))
+let nu = nuTemplate.Replace(verTemplate,ver)
+File.WriteAllText(Path.Combine(packRoot,"AutoItX","AutoItX.nuspec"),nu)

@@ -3,9 +3,16 @@ NAutoIt
 
 .NET and IronPython view onto AutoItX
 
-
-How to
+AutoItX NuGet package
 ===
+Use F# interactive to run
+
+- `scripts\get.fs`
+- `scripts\autoit.fs`
+
+IronPython AutoItX
+===
+
 
 `AutoItX3_x64.dll` or `AutoItX3.dll` should be located in the same folder as `nautoit.dll`
  
