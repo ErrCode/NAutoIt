@@ -1,5 +1,5 @@
 NAutoIt
-=======
+===========
 
 .NET and IronPython view onto AutoItX
 
@@ -36,7 +36,7 @@ au = AutoIt()
 au.MsgBox(64, "Tutorial", "Hello World!")
 ```
 
-You can use some of .NET either like like MS UI Automation or White 
+You can use use avalable .NET techs like MS UI Automation or White if needed
 ---
 
 ```python
@@ -77,12 +77,22 @@ Why python
 - Python has great pool of developers and other people (e.g. data science )
 - Writing all in Python will allow to create some abstract modules which represend **logic of test** abstracted of underlying UI technology.
 - Unlike C# it is much easirer to develop, tune in runtime and read, which suits more for tests.
-- There are **free** Python IDEs to author tests.
+- There are **free** Python IDEs to author tests. All code here is writtent in SharpDevelop.
 - Allows running Cherking Python to allow write **bussiness readable user** steps to allow bussiness users to participate. This steps guide and frame tests allowing greate level of sustainability.[3]
 
-TODO
-===
-- Generate download AutoItX archive and generate interop+manifest+nuspec automatically
+Example
+----
+Business logic:
+```gherkin
+Then rows are sorted by 'Count' 
+```
+
+Test logic agains abstract table (obtained from service, from Windows or HTML UI):
+```
+@then('rows are sorted by "{name}"')
+def step_impl(context,name):
+    assert context.table[name].sorted is True
+```
 
 [1]: http://stackoverflow.com/questions/9209910/how-to-use-registration-free-com-dll-in-dot-net/9229764?noredirect=1#comment29983358_9229764 
 [2]: https://www.diigo.com/list/dzmitry_lahoda/Python+UI+Automation/2tiwxcs10
