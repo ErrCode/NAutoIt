@@ -68,4 +68,8 @@ File.Copy(packRoot+"unregister.bat",packaging+"unregister.bat",true)
 // prepare nuspec
 let nuTemplate = File.ReadAllText(Path.Combine(packRoot,"template.nuspec"))
 let nu = nuTemplate.Replace(verTemplate,ver)
-File.WriteAllText(Path.Combine(packRoot,"AutoItX","AutoItX.nuspec"),nu)
+let nuPath = Path.Combine(packRoot,"AutoItX","AutoItX.nuspec")
+File.WriteAllText(nuPath,nu)
+
+//create package
+Process.Start(nuget,"pack " + nuPath)
