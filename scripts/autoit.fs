@@ -61,9 +61,10 @@ let x86 = Path.Combine(packaging,"AutoItX3.dll.manifest")
 let x86Txt = template.Replace(verTemplate,ver).Replace(dllTemplate,"AutoItX3.dll") 
 File.WriteAllText(x86,x86Txt)
 
-// copu scripts for COM un/registration
+// copu scripts for COM un/registration and license
 File.Copy(packRoot+"register.bat",packaging+"register.bat",true)
 File.Copy(packRoot+"unregister.bat",packaging+"unregister.bat",true)
+File.Copy(packRoot+"License.htm",packaging+"License.htm",true)
 
 // prepare nuspec
 let nuTemplate = File.ReadAllText(Path.Combine(packRoot,"template.nuspec"))
