@@ -10,7 +10,7 @@ open Ionic.Zip
 let nuget = Path.GetFullPath("nuget.exe")
 let packages = Path.GetFullPath(Path.Combine(Environment.CurrentDirectory,"../packages/"))
 let packRoot =  Path.GetFullPath(Path.Combine(Environment.CurrentDirectory,"../packaging/"))
-let packaging = Path.Combine(packRoot,"AutoItX/lib/AutoItX/")
+let packaging = Path.Combine(packRoot,"AutoItX/lib/")
 let sdkpath = "c:/Program Files (x86)/Microsoft SDKs/Windows/v7.0A/Bin/x64/"
 printfn "SDK %s" sdkpath
 printfn "Target %s" packaging
