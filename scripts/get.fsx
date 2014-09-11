@@ -22,11 +22,17 @@ Process.Start(nuget,cmd "TestStack.White" "0.12.0").WaitForExit()
 
 //download autoitx
 let wget = new WebClient()
-wget.Headers.Add("User-Agent: Other")//fixes 403 Forbidden
+let autoSite =  "http://www.autoitscript.com/"
+
+
 let zip = "autoit-v3.zip"
-//TODO: download licesehttp://www.autoitscript.com/autoit3/docs/license.htm
-let autoit = "http://www.autoitscript.com/cgi-bin/getfile.pl?autoit3/" + zip
+let autoit = autoSite+ "cgi-bin/getfile.pl?autoit3/" + zip
 printfn "Start downloading: %s" autoit
-// unpack 
 let zipPath = Path.Combine(packages,zip)
+wget.Headers.Add("User-Agent: Other")//fixes 403 Forbidden
 wget.DownloadFile(autoit,zipPath)
+
+let license = autoSite + "autoit3/docs/license.htm"
+printfn "Downloading license: %s" license
+wget.Headers.Add("User-Agent: Other")//fixes 403 Forbidden
+wget.DownloadFile(license,Path.Combine(packages,"license.htm"))

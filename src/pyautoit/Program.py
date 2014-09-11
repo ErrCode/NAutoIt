@@ -1,3 +1,6 @@
 ﻿
-#TODO: compile Excel and other modules to dll
-print "Hello"
+
+scriptName = "simple_notepad_automation.py"
+
+print ("Start script: " + scriptName) 
+execfile(scriptName) 

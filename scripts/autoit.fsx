@@ -11,6 +11,11 @@ let nuget = Path.GetFullPath("nuget.exe")
 let packages = Path.GetFullPath(Path.Combine(Environment.CurrentDirectory,"../packages/"))
 let packRoot =  Path.GetFullPath(Path.Combine(Environment.CurrentDirectory,"../packaging/"))
 let packaging = Path.Combine(packRoot,"AutoItX/lib/AutoItX/")
+let sdkpath = "c:/Program Files (x86)/Microsoft SDKs/Windows/v7.0A/Bin/x64/"
+printfn "SDK %s" sdkpath
+printfn "Target %s" packaging
+
+
 
 //delete previous release
 if (Directory.Exists(packaging)) then 
@@ -23,7 +28,12 @@ for  en in zip do
   if  en.FileName.StartsWith("install/AutoItX/") then
     en.Extract(packages,ExtractExistingFileAction.OverwriteSilently)
 zip.Dispose()
-Directory.Move (Path.Combine(packages,@"install\AutoItX\"),packaging)            
+let got = Path.Combine(packages,@"install\AutoItX\")
+printfn "Source %s" got
+Directory.Move (got,packaging)
+
+let license = "License.htm"
+File.Copy(packages+license,packaging+license,true)
 
 printfn "Start makeing AutoItX package"
 printfn "Nuget path: %s" nuget
@@ -38,8 +48,9 @@ let dll = Path.Combine(packaging,dllName)
 let verInfo =  FileVersionInfo.GetVersionInfo(dll)
 let ver = String.Format("{0}.{1}.{2}.{3}",verInfo.FileMajorPart, verInfo.FileMinorPart,verInfo.FileBuildPart,verInfo.FilePrivatePart)
 
-//gemerate interop dll
+//generate interop dll
 let tlbimp = "tlbimp.exe"
+
 let manifestName = dllName + ".manifest"
 let interop = Path.Combine(packaging,"AutoItX3.Interop.dll")
 let interopCmd =  dll+  " /asmversion:" + ver + " /out:" + interop + " /machine:Agnostic /nologo"
@@ -47,7 +58,7 @@ let p = new Process();
 p.StartInfo.Arguments <- interopCmd
 p.StartInfo.UseShellExecute <- false
 p.StartInfo.RedirectStandardOutput <- true
-p.StartInfo.FileName <- tlbimp
+p.StartInfo.FileName <- Path.Combine(sdkpath,tlbimp)
 p.Start()
 
 // write down manifests
@@ -61,10 +72,9 @@ let x86 = Path.Combine(packaging,"AutoItX3.dll.manifest")
 let x86Txt = template.Replace(verTemplate,ver).Replace(dllTemplate,"AutoItX3.dll") 
 File.WriteAllText(x86,x86Txt)
 
-// copu scripts for COM un/registration and license
+// copy scripts for COM un/registration
 File.Copy(packRoot+"register.bat",packaging+"register.bat",true)
 File.Copy(packRoot+"unregister.bat",packaging+"unregister.bat",true)
-File.Copy(packRoot+"License.htm",packaging+"License.htm",true)
 
 // prepare nuspec
 let nuTemplate = File.ReadAllText(Path.Combine(packRoot,"template.nuspec"))

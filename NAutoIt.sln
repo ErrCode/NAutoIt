@@ -2,16 +2,11 @@
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 # SharpDevelop 4.4
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nautoit", "NAutoIt\NAutoIt.csproj", "{7AA95086-FCAD-4C98-BAD7-B58AE5C06876}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NAutoIt", "src\NAutoIt\NAutoIt.csproj", "{7AA95086-FCAD-4C98-BAD7-B58AE5C06876}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NAutoIt.Sample", "NAutoIt.Sample\NAutoIt.Sample.csproj", "{C09ACE3D-DD97-43A1-9C6C-A75516C82C66}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NAutoIt.Sample", "src\NAutoIt.Sample\NAutoIt.Sample.csproj", "{C09ACE3D-DD97-43A1-9C6C-A75516C82C66}"
 EndProject
-Project("{FD48973F-F585-4F70-812B-4D0503B36CE9}") = "pyautoit", "pyautoit\pyautoit.pyproj", "f4e66022-ab35-445b-a540-8937af98bf31"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Package", "Package", "{48551023-5993-41A0-826D-C5FEA85BE0AE}"
-	ProjectSection(SolutionItems) = postProject
-		..\README.md = ..\README.md
-	EndProjectSection
+Project("{FD48973F-F585-4F70-812B-4D0503B36CE9}") = "pyautoit", "src\pyautoit\pyautoit.pyproj", "f4e66022-ab35-445b-a540-8937af98bf31"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
