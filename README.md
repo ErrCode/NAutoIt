@@ -100,7 +100,7 @@ Why Python
 - Writing all in Python will allow to create some abstract modules which represend **logic of test** abstracted of underlying UI technology.
 - Unlike C# it is much easirer to develop, tune in runtime and read, which suits more for tests.
 - There are **free** Python IDEs to author tests.
-- Allows running Cherking Python to allow write **bussiness readable user** steps to allow bussiness users to participate. This steps guide and frame tests allowing greate level of sustainability.[3]
+- Allows running Cherking Python to allow write **business readable user** steps to allow business users to participate. This steps guide and frame tests allowing greate level of sustainability.[3]
 
 Example
 ----
